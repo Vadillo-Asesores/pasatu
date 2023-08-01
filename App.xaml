@@ -1,0 +1,14 @@
+﻿<Application x:Class="Pasatu.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Pasatu" xmlns:System="clr-namespace:System;assembly=mscorlib"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Style x:Key="WinAll" TargetType="{x:Type Window}">
+            <Setter Property="FontFamily" Value="Fira Sans" />
+            <Setter Property="FontSize" Value="16" />
+        </Style>
+        <System:Double x:Key="labelsFormWidth">200</System:Double>
+        <System:Double x:Key="inputsFormWidth">250</System:Double>
+    </Application.Resources>
+</Application>
