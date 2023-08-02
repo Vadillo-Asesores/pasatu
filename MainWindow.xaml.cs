@@ -24,5 +24,10 @@ namespace Pasatu
         {
             InitializeComponent();
         }
+
+        private void submitButton_Click(object sender, RoutedEventArgs e)
+        {
+            ADUtils.GetDCServersIP();
+        }
     }
 }
