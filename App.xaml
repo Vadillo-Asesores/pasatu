@@ -9,6 +9,6 @@
             <Setter Property="FontSize" Value="16" />
         </Style>
         <System:Double x:Key="labelsFormWidth">200</System:Double>
-        <System:Double x:Key="inputsFormWidth">250</System:Double>
+        <System:Double x:Key="inputsFormWidth">200</System:Double>
     </Application.Resources>
 </Application>

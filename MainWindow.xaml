@@ -6,36 +6,56 @@
         xmlns:System="clr-namespace:System;assembly=mscorlib"
         xmlns:local="clr-namespace:Pasatu"
         mc:Ignorable="d"
-        Title="PASATU - Pasahitza aldatu" Height="450" Width="800"
+        Title="PASATU - Pasahitza aldatu" Height="550" Width="800"
         Style="{StaticResource WinAll}" WindowStyle="ToolWindow" ShowInTaskbar="True" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" WindowState="Normal">
     <Grid>
-        <StackPanel>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="381*"/>
+            <ColumnDefinition Width="419*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.ColumnSpan="2">
             <WrapPanel Height="110" VerticalAlignment="Top">
                 <TextBlock Background="#00000032" Margin="15,15,0,0" FontFamily="Fira Sans" FontSize="34">Cambio de contraseña AD</TextBlock>
+                <Label x:Name="deleteme" Content="Label"/>
             </WrapPanel>
-            <StackPanel AutomationProperties.HelpText="Nombre de usuario" Margin="30,0,30,0">
+            <StackPanel Margin="30,0,30,0">
+                <WrapPanel Margin="0,0,0,15">
+                    <Label Content="Dominio" Width="{StaticResource labelsFormWidth}"/>
+                    <TextBox x:Name="domainText" Width="{StaticResource inputsFormWidth}" BorderBrush="White">
+                    </TextBox>
+                    <TextBlock x:Name="domainErrorText" VerticalAlignment="Center" Visibility="Hidden" Margin="5,0,0,0" Text="El equipo no está unido a un dominio o no se puede detectar" Width="280" FontSize="12" TextWrapping="WrapWithOverflow" FontStyle="Italic" Foreground="#FFBD2222"/>
+                </WrapPanel>
                 <WrapPanel Margin="0,0,0,15">
                     <Label Content="Nombre de usuario" Width="{StaticResource labelsFormWidth}"/>
-                    <TextBox Width="{StaticResource inputsFormWidth}">
+                    <TextBox x:Name="usernameText" Width="{StaticResource inputsFormWidth}">
                     </TextBox>
+                    <TextBlock VerticalAlignment="Center" x:Name="usernameErrorText" Visibility="Hidden" Margin="5,0,0,0" Text="El nombre de usuario es obligatorio" Width="280" FontSize="12" TextWrapping="WrapWithOverflow" FontStyle="Italic" Foreground="#FFBD2222"/>
                 </WrapPanel>
                 <WrapPanel Margin="0,0,0,15">
                     <Label Content="Contraseña actual" Width="{StaticResource labelsFormWidth}"/>
-                    <PasswordBox Width="{StaticResource inputsFormWidth}"/>
+                    <PasswordBox x:Name="passwordText" Width="{StaticResource inputsFormWidth}"/>
+                    <TextBlock x:Name="passwordErrorText" VerticalAlignment="Center" Visibility="Hidden" Margin="5,0,0,0" Text="La contraseña es obligatorio" Width="280" FontSize="12" TextWrapping="WrapWithOverflow" FontStyle="Italic" Foreground="#FFBD2222"/>
                 </WrapPanel>
                 <WrapPanel Margin="0,0,0,15">
-                    <Label Content="Contraseña actual" Width="{StaticResource labelsFormWidth}"/>
-                    <PasswordBox Width="{StaticResource inputsFormWidth}"/>
+                    <Label Content="Nueva contraseña" Width="{StaticResource labelsFormWidth}"/>
+                    <PasswordBox x:Name="newPasswordText" Width="{StaticResource inputsFormWidth}"/>
+                    <TextBlock x:Name="newPasswordErrorText" VerticalAlignment="Center" Visibility="Hidden" Margin="5,0,0,0" Text="La nueva contraseña es obligatoria y distinta a la actual" Width="280" FontSize="12" TextWrapping="WrapWithOverflow" FontStyle="Italic" Foreground="#FFBD2222"/>
                 </WrapPanel>
                 <WrapPanel Margin="0,0,0,15">
                     <Label Content="Repetir nueva" Width="{StaticResource labelsFormWidth}"/>
-                    <PasswordBox Width="{StaticResource inputsFormWidth}"/>
+                    <PasswordBox x:Name="repeatText" Width="{StaticResource inputsFormWidth}"/>
+                    <TextBlock x:Name="repeatErrorText" VerticalAlignment="Center" Visibility="Hidden" Margin="5,0,0,0" Text="Las contraseñas no coinciden" Width="280" FontSize="12" TextWrapping="WrapWithOverflow" FontStyle="Italic" Foreground="#FFBD2222"/>
                 </WrapPanel>
             </StackPanel>
             <StackPanel Width="400" Margin="0,20,0,0">
                 <WrapPanel HorizontalAlignment="Right">
                     <Button x:Name="submitButton" IsDefault="True" Content="ACEPTAR" Padding="15,7,15,7" Click="submitButton_Click"/>
                 </WrapPanel>
+            </StackPanel>
+            <StackPanel x:Name="messagePanel" Width="550" Margin="0,35,0,0" Visibility="Hidden">
+                <Border x:Name="messageBorder" BorderThickness="1" BorderBrush="#FF6F0101">
+                    <TextBlock x:Name="messageText" HorizontalAlignment="Center" Foreground="#FFC10D0D" Padding="20,20,20,20" TextWrapping="WrapWithOverflow"></TextBlock>
+                </Border>
             </StackPanel>
         </StackPanel>
 
