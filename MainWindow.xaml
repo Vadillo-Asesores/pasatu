@@ -16,12 +16,13 @@
         <StackPanel Grid.ColumnSpan="2">
             <WrapPanel Height="110" VerticalAlignment="Top">
                 <TextBlock Background="#00000032" Margin="15,15,0,0" FontFamily="Fira Sans" FontSize="34">Cambio de contraseña AD</TextBlock>
-                <Label x:Name="deleteme" Content="Label"/>
+                <Image Height="54" Source="/logo-v.jpg" Stretch="Fill" Width="316" Margin="40,10,0,0"/>
+                <TextBlock Background="#00000032" Margin="370,0,0,0" FontFamily="Fira Sans" FontSize="12">v1.0.0</TextBlock>
             </WrapPanel>
             <StackPanel Margin="30,0,30,0">
                 <WrapPanel Margin="0,0,0,15">
                     <Label Content="Dominio" Width="{StaticResource labelsFormWidth}"/>
-                    <TextBox x:Name="domainText" Width="{StaticResource inputsFormWidth}" BorderBrush="White">
+                    <TextBox x:Name="domainText" Width="{StaticResource inputsFormWidth}" BorderBrush="White" IsEnabled="False">
                     </TextBox>
                     <TextBlock x:Name="domainErrorText" VerticalAlignment="Center" Visibility="Hidden" Margin="5,0,0,0" Text="El equipo no está unido a un dominio o no se puede detectar" Width="280" FontSize="12" TextWrapping="WrapWithOverflow" FontStyle="Italic" Foreground="#FFBD2222"/>
                 </WrapPanel>
@@ -52,9 +53,9 @@
                     <Button x:Name="submitButton" IsDefault="True" Content="ACEPTAR" Padding="15,7,15,7" Click="submitButton_Click"/>
                 </WrapPanel>
             </StackPanel>
-            <StackPanel x:Name="messagePanel" Width="550" Margin="0,35,0,0" Visibility="Hidden">
+            <StackPanel x:Name="messagePanel" Width="620" Margin="0,20,0,0" Visibility="Hidden">
                 <Border x:Name="messageBorder" BorderThickness="1" BorderBrush="#FF6F0101">
-                    <TextBlock x:Name="messageText" HorizontalAlignment="Center" Foreground="#FFC10D0D" Padding="20,20,20,20" TextWrapping="WrapWithOverflow"></TextBlock>
+                    <TextBlock x:Name="messageText" HorizontalAlignment="Center" Foreground="#FFC10D0D" Padding="20,20,20,20" TextWrapping="WrapWithOverflow"/>
                 </Border>
             </StackPanel>
         </StackPanel>

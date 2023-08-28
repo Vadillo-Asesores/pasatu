@@ -30,8 +30,6 @@ namespace Pasatu
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            this.deleteme.Content = WindowsIdentity.GetCurrent().Name;
-
             // Set the domain name. If empty, app is disabled
             // Submit relies on this being made. If changed, check submit function
             String? domainName = ADUtils.GetDomainName();
@@ -80,13 +78,12 @@ namespace Pasatu
             }
 
             // Check if passwords are equals
-            if (!passwordText.Password.Equals(repeatText.Password))
+            if (!newPasswordText.Password.Equals(repeatText.Password))
             {
                 errors = true;
                 repeatErrorText.Visibility = Visibility.Visible;
             }
 
-            bool changed = false;
             if (!errors)
             {
                 // Retrieve all DC controllers
@@ -98,7 +95,6 @@ namespace Pasatu
                     if (result.IsOk())
                     {
                         setOkPanel("Contraseña modificada correctamente.");
-                        changed = true;
                         break;
                     }
 
@@ -122,6 +118,7 @@ namespace Pasatu
             domainErrorText.Visibility = Visibility.Hidden;
             usernameErrorText.Visibility = Visibility.Hidden;
             passwordErrorText.Visibility = Visibility.Hidden;
+            newPasswordErrorText.Visibility = Visibility.Hidden;
             repeatErrorText.Visibility = Visibility.Hidden;
             messagePanel.Visibility = Visibility.Hidden;
             this.HideMessagePanel();
