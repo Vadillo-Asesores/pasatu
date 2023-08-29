@@ -17,7 +17,7 @@ The application searches for all the domain controllers and starts trying to cha
  - If an error like password complexity compliance error is received, it does not keep trying.
 
 ## What's that name?
-It comes from "PASAhitza aldaTU": "Change password" in basque.
+It comes from "PASAhitza aldaTU": "Change password" in basque. Pasatu also means 'pass' (in English), so it seemed fit.
 
 ## Credits
 https://stackoverflow.com/a/21252845 for the solution.
