@@ -1,8 +1,5 @@
 # Pasatu - AD Password Changer
 
-## What's that name?
-It comes from "PASAhitza aldaTU": "Change password" in basque.
-
 ## Features
 Allows to change a user's password in an Active Directory domain. Just that.
 
@@ -19,9 +16,12 @@ The application searches for all the domain controllers and starts trying to cha
  - If a 'you-can-try-the-next-dc error' arises, like network connectivity problems, it tries the next one
  - If an error like password complexity compliance error is received, it does not keep trying.
 
+## What's that name?
+It comes from "PASAhitza aldaTU": "Change password" in basque.
+
 ## Credits
 https://stackoverflow.com/a/21252845 for the solution.
-https://stackoverflow.com/users/4686882/binarypatrick for pointing out the reasons not to use UserPrincipal in that same post.
+https://stackoverflow.com/users/4686882/binarypatrick for pointing out the reasons not to use `UserPrincipal` in that same post.
 
 ## Possible To Do's
 [#3 multilanguage](https://github.com/gva-mgutierrez/pasatu/issues/1)
