@@ -21,6 +21,7 @@ It comes from "PASAhitza aldaTU": "Change password" in basque. Pasatu also means
 
 ## Credits
 https://stackoverflow.com/a/21252845 for the solution.
+
 https://stackoverflow.com/users/4686882/binarypatrick for pointing out the reasons not to use `UserPrincipal` in that same post.
 
 ## Possible To Do's
